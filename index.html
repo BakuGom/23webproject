@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>박철웅의 홈페이지</title>
+  <link rel="stylesheet" href="./css/mystyle.css">
+  <style> </style>
+</head>
+<body>
+  <svg height="120" width="100%">
+    <!-- <defs> 요소는 그래픽 객체를 정의, <def> 요소 내에서 만든 객체는 출력되는 것은 아님
+         나중에 사용하려면 fill 속성에 참조 연결하거나 <use> 요소를 이용해야함 
+         <def> 요소 내에 선형그레디언트 정의 -->
+    <defs>
+      <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#05077e;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:rgb(69, 156, 255);stop-opacity:1" />
+      </linearGradient>
+    </defs>
+    <rect fill="url(#grad1)" x="0" y="0" width="100%" height="120" />
+    <text fill="#cccccc" font-size="60" font-family="나눔고딕" x="50" y="80">박철웅의 홈페이지</text>
+    Sorry, your browser does not support inline SVG.
+  </svg>
+    
+  <ul>
+    <li><a class="false" href="https://bakugom.github.io/23webproject/">Home</a></li>
+    <li><a href="./html/resume.html">온라인이력서</a></li>
+    <li><a href="./html/ulife.html">대학생활</a></li>
+    <li><a href="./html/portfolio.html">포트폴리오</a></li>
+    <li class="dropdown">
+      <a href="#" class="dropbtn">Dropdown</a>
+      <div class="dropdown-content" >
+        <a href="http://www.google.com">구글</a>
+        <a href="http://www.youtube.com">유튜브</a>
+        <a href="http://www.naver.com">네이버</a>
+      </div>
+    </li>
+  </ul>
+
+  <div>
+    <h1 >환영합니다.</h1>
+    <img src="./image/cwu.jpg" alt="청운대학교 사진">
+  </div>
+  <h1 >박철웅 홈페이지는 여러분이 발전할 수 있도록 돕고 싶습니다. </h1>
+  <p> 감사합니다. </p>
+
+   
+   
+</body>
+</html>

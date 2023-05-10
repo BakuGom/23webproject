@@ -1,0 +1,119 @@
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: visible;  
+  /* 드롭다운메뉴가 확장될 때 메뉴 공간이 부족하여 오버플로우 발생
+     overflow: visible; 은 오버클로우되는 콘텐츠를 잘라내지 않고 
+     영역 범위 밖까지 콘텐츠를 출력함
+     overflow: hidden은 오버클로우되는 콘텐츠를 잘라냄. */
+  background-color: #05077e;
+  position: sticky;
+  top:0px;
+  /* position: sticky는 미리 정의한 위치에 도달하기 전에는 
+               다른 요소와 함께 스크롤 됨
+     위치를 정의하기 위해 left, right, top, bottom 속성 사용
+     top:0px; 은 화면(뷰포트)의 상단 0px 위치를 지정
+     ul 요소는 뷰포트의 상단 0px 위치에 도달하면 sticky가 됨. 
+     sticky는 화면에 마치 붙여놓은 것처럼 위치가 고정되는 것을 의미  
+     스크롤 할 때 다른 요소는 함께 스크롤되지만 
+     ul요소는 상단 0px 위치에 고정되어 움직이지 않음.  */
+}
+
+li {
+  /* float: left; */
+  display: inline-block;
+  /* 가로방향으로 메뉴를 만들기 위해 두가지 방법 모두 사용 가능
+     float: left;  => li항목을 float(부유)시키고 왼쪽부터 차례로 배치 
+     display: inline-block; => 기본적으로 li는 display: block 요소임
+                               즉, li항목 출력 후 줄바꿈이 일어남
+     inline-block은 줄바꿈이 일어나지 않음
+     따라서 li항목 출력 후 줄바꿈 없이 다음 li 항목이 가로방향으로 출력됨                           
+     */
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  /* a 요소와 .dropbtn(이것도 a 요소임)은 기본적으로 display: inline 요소임
+     inline 요소는 block 요소와 달리 콘텐츠의 크기만큼만 영역을 차지함
+     당연히 width, height, padding, margin 적용하지 못함. 
+     아래와 같이 padding: 14px 16px;을 지정하면 보기 좋게 출력됨. 
+     그러기 위해서는 display: inline-block로 바꾸어 주어야 함. 
+     결과적으로 width, height, padding, margin 적용 가능함. 
+     하지만 display: block 요소처럼 줄바꿈은 발생하지 않음.   
+  */
+  padding: 14px 16px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+/*     
+li.dropdown {
+  display: inline-block;
+}
+*/
+.dropdown-content {
+  /* .dropdown-content 클래스 요소는 구글, 유튜브, 네이버를 포함하는 
+      확장되는 드롭다운 콘텐츠임. */
+  display: none; /* 처음에는 드롭다운 메뉴가 보이지 않도록 설정 
+                    사용자가 드롭다운 메뉴에 마우스오버하면 
+                    display: block;으로 변경하여 보이게 함 
+                    테스트를 할때는 메뉴가 보이지 않기 때문에
+                    display: block로 하고 테스트하길 바람.  */
+  position: absolute; 
+  /* position: absolute; 는 출력되는 위치의 기준점을 정할 때 
+     가장 가까운 조상(position: static;이 아니어야 함)을 기준점으로 사용 
+     기본적으로 요소의 position 속성은 static으로 설정됨. 
+     position: static은 normal flow에 따라 요소의 출력 위치가 정해짐
+     html문서의 요소는 상단에서 하단으로 좌에서 우로 차례로 출력하는 것이
+     normal flow(정상적인 흐름)임. 
+     ***
+     여기서, .dropdown-content의 아버지가 <li class="dropdown"> 요소임. 
+             <li class="dropdown"> 요소는 position 속성을 지정하지 않음
+             즉, position 속성은 기본값인 static으로 간주됨. 
+     그렇다면 .dropdown-content의 할아버지를 살펴보자.     
+             할아버지는 <ul>이고 position: sticky;로 설정함.
+             따라서 <ul>요소를 기준으로 출력 위치가 결정됨       
+  */
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            /* 요소에 테두리(border)를 그리는 대신에 
+               카드 형태의 박스의 그림지 효과를 줌. 
+               오른쪽(0px), 아래(8px),
+               blur(번짐, 16px), 확산(0px)
+               그림자색 rgba(0,0,0,0.2) */
+  z-index: 1; /* z-index 기본값은 0
+                 요소들이 겹쳐질 때 z-index 값이 클수록 위쪽에 배치
+                 아랫쪽에 배치되면 보이지 않거나 선택하지 못하게 됨. */
+           
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block; 
+  /* .dropdown-content a => .dropdown-content클래스의 후손인 a 
+    a 요소는 기본적으로 display: inline 요소임 
+     inline 요소는 block 요소와 달리 콘텐츠의 크기만큼만 영역을 차지함
+     width, height, padding, margin 적용하지 못함. 
+     특히, display: block 요소처럼 줄바꿈도 발생하지 않음.
+     display: block로 바꾸어 주면 줄바꿈이 일어남. 
+     구글
+     유튜브
+     네이버
+     처럼 줄을 바꾸면서 드롭다운 목록이 출력됨. 
+  */
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block; /* 마우스 오버시 드롭다운 메뉴가 보이도록 설정 */
+}
