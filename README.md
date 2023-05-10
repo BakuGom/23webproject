@@ -1,2 +1,2 @@
 # 23webproject
-History of studing HTML
+History of studying HTML
