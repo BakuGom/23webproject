@@ -15,17 +15,17 @@
          box-sizing을 border-box 로 지정하면 **박스 크기 = 콘텐츠 크기+padding크기+border크기의 합**
          패딩의 크기를 포함한 article 영역의 전체 넓이를 70%로 맞추기 위해 border-box로 지정함 */
   width: 70%;
-  background-color: #f1f1f1;
+  background-color: #ffffff;
   height: 600px; /* only for demonstration, should be removed */
   }
-  aside {
+  /* aside {
   float: left;
   padding: 20px; 
   width: 30%;
   box-sizing: border-box; 
   background-color: rgb(69, 156, 255);
   height: 600px; /* only for demonstration, should be removed */
-  }
+  } */
   </style>
 </head>
 <body>
@@ -45,36 +45,46 @@
   </svg>
     
   <ul>
-    <li><a class="active" href="../index.html">Home</a></li>
-    <li><a href="./resume.html">온라인이력서</a></li>
-    <li><a href="./ulife.html">대학생활</a></li>
-    <li><a href="./portfolio.html">포트폴리오</a></li>
+    <!-- <li><a class="false" href="https://bakugom.github.io/23webproject/">Home</a></li> -->
+    <li><a class="false" href="../index.html">홈</a></li>
     <li class="dropdown">
-      <a href="#" class="dropbtn">Dropdown</a>
+      <a href="#" class="dropbtn">온라인이력서</a>
       <div class="dropdown-content" >
-        <a href="http://www.google.com">구글</a>
-        <a href="http://www.youtube.com">유튜브</a>
-        <a href="http://www.naver.com">네이버</a>
+        <a href="resume.html">언어</a>
+        <a href="certificate.html">자격증</a>
+        <a href="career.html">경력</a>
+        <a href="Personal Information.html">인적사항</a>
+
+      </div>
+    </li>
+    <li><a href="ulife.html">대학생활</a></li>
+    <li class="dropdown">
+      <a href="#" class="dropbtn">포트폴리오</a>
+      <div class="dropdown-content" >
+        <a href="vamsurlike.html">vamsurlike</a>
+        <a href="23webproject.html">23webproject</a>
+      </div>
+    <li class="dropdown">
+      <a href="#" class="dropbtn">링크</a>
+      <div class="dropdown-content" >
+        <a href="https://github.com/BakuGom" target="_blank" rel="noopener noreferrer">깃허브</a>
+        <a href="mailto:"kokoroco206@gmail.com">메일보내기</a>
       </div>
     </li>
   </ul>
 
   <article>
-    <h1>읽었던 책들</h1>
-    <p><a href="http://www.chungwoon.ac.kr">감명깊은 책 1(성채)</a></p>
-    <p>London is the capital city of England. It is the most populous city in the  United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
-    <p>Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.</p>
-
-    <h1>전공관련 관심분야</h1>
-    <p>London is the capital city of England. It is the most populous city in the  United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
-    <p>Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.</p>
+    <h1>활동</h1>
+    <p>2022~ unity 스터디</p>
+    <p></p>
+    <h1>관심분야</h1>
+    <p>게임제작 , 백앤드 개발 , 서버</p>
   </article> 
-  <aside> 
+  <!-- <aside> 
     <img src="../image/top.jpg" alt="관련 사이트" style="max-width: 100%;"/>
-  </aside>
+  </aside> -->
   <div>
-    <p>안녕하세요.</p>
-    <p>반갑습니다.</p>
+    
   </div>
 </body>
 </html>

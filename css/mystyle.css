@@ -87,7 +87,7 @@ li.dropdown {
                오른쪽(0px), 아래(8px),
                blur(번짐, 16px), 확산(0px)
                그림자색 rgba(0,0,0,0.2) */
-  z-index: 1; /* z-index 기본값은 0
+  z-index: 5; /* z-index 기본값은 0
                  요소들이 겹쳐질 때 z-index 값이 클수록 위쪽에 배치
                  아랫쪽에 배치되면 보이지 않거나 선택하지 못하게 됨. */
            
