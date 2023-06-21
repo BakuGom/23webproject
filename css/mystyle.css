@@ -31,6 +31,9 @@ li {
      따라서 li항목 출력 후 줄바꿈 없이 다음 li 항목이 가로방향으로 출력됨                           
      */
 }
+.right-aligned {
+  float: right;
+}
 
 li a, .dropbtn {
   display: inline-block;
